@@ -1,10 +1,8 @@
 <template>
-	<div>
-		<h1>About</h1>
-	</div>
+	<h1>PropertyList</h1>
 </template>
 <script>
 	export default {
-		name: 'About'
+		name: 'PropertyList'
 	}
 </script>
