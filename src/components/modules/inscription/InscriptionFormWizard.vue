@@ -3,7 +3,7 @@
 		<div class="va-row">
       <div class="flex md12">
         <vuestic-widget class="no-h-padding"
-                        :headerText="$t('Subscribete')">
+                        :headerText="$t('Incripcion')">
           <vuestic-wizard
             :steps="hsSteps">
             <div slot="page1" class="form-wizard-tab-content">
@@ -84,8 +84,9 @@
 </template>
 <script>
 	import CountriesList from 'data/CountriesList'
+  import TypeUsers from 'data/TypeUsers'
 	export default {
-		name: 'SubscriteForm',
+		name: 'InscriptionFormWizard',
 		components: {
 		},
 		computed: {
