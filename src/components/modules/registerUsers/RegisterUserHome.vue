@@ -30,17 +30,28 @@
                 </div>
               </div>
               <div class="form-group with-icon-right">
-                 <div class="input-group">
-                  <input name="hsEmail" data-vv-as="email" v-model="hsEmail" v-validate="'required'" required title="Su Correo electronico" />
-                  <i
-                    class="fa fa-exclamation-triangle error-icon icon-right input-icon"></i>
-                  <i class="fa fa-check valid-icon icon-right input-icon"></i>
-                  <label class="control-label">{{'forms.wizard.email' |
-                    translate}}</label><i class="bar"></i>
-                  <small v-show="errors.has('hsEmail')" class="help text-danger">
-                    {{ errors.first('hsEmail') }}
-                  </small>
-                </div>
+                 <div class="form-group with-icon-right"
+                       :class="{'has-error': errors.has('successfulEmail'), 'valid': isSuccessfulEmailValid}">
+                    <div class="input-group">
+                      <input
+                        id="successfulEmail"
+                        name="successfulEmail"
+                        v-model="successfulEmail"
+                        v-validate="'required|email'"
+                        required/>
+                      <i
+                        class="fa fa-exclamation-triangle error-icon icon-right input-icon"></i>
+                      <i
+                        class="fa fa-check valid-icon icon-right input-icon"></i>
+                      <label class="control-label" for="successfulEmail">{{'forms.inputs.emailValidatedSuccess'
+                        | translate}} </label><i
+                      class="bar"></i>
+                      <small v-show="errors.has('successfulEmail')"
+                             class="help text-danger">
+                        {{ errors.first('successfulEmail') }}
+                      </small>
+                    </div>
+                  </div>
               </div>
             </div>
             <div slot="page2" class="form-wizard-tab-content">
@@ -97,10 +108,11 @@
             label: this.$t('forms.wizard.stepOne'),
             slot: 'page1',
             onNext: () => {
-              this.validateFormField('hsName')
+              this.validateFormField('hsName'),
+              this.validateFormField('successfulEmail')
             },
             isValid: () => {
-              return this.isFormFieldValid('hsName')
+              return this.isFormFieldValid('hsName'), this.isFormFieldValid('successfulEmail')
             },
           },
           {
@@ -118,12 +130,19 @@
             slot: 'page3',
           },
         ]
+      },
+      isSuccessfulEmailValid () {
+        let isValid = false
+        if (this.formFields.successfulEmail) {
+          isValid = this.formFields.successfulEmail.validated && this.formFields.successfulEmail.valid
+        }
+        return isValid
       }
     },
     data () {
       return {
         hsName: '',
-        hsEmail: '',
+        successfulEmail: '',
         hsCountry: '',
         countriesList: CountriesList,
         chosenCountry: '',
@@ -141,6 +160,11 @@
           this.$validator.validate(fieldName, this[fieldName])
         },
       },
+    created () {
+      this.$nextTick(() => {
+        this.$validator.validateAll()
+      })
+    }
   }
 </script>
 <style lang="scss">

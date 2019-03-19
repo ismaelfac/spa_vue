@@ -94,7 +94,7 @@
       "subscribe": "Suscribirse a la newsletter"
     },
     "inputs": {
-      "emailValidatedSuccess": "Email (validado con éxito)",
+      "emailValidatedSuccess": "Email",
       "emailValidated": "Email (validado)",
       "inputWithIcon": "Input con Icono",
       "inputWithButton": "Input con Boton",
