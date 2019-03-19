@@ -2,8 +2,8 @@
   <div
     class="wizard"
     :class="computedLayout"
-    v-orientation-handler="{ layout: wizardLayout,  breakPoint: orientationBreakPoint }"
-  >
+    v-orientation-handler="{ layout: wizardLayout,  breakPoint: orientationBreakPoint }">
+    
     <div v-if="computedLayout === 'horizontal'"
          class="indicator-container indicator-container-horizontal">
       <simple-horizontal-indicator

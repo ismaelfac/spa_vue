@@ -119,12 +119,13 @@
     "wizard": {
       "completed": "Asistente Completado!",
       "confirmSelection": "Confirmar selección",
-      "name": "Nombre",
+      "fullName": "Nombres Completos",
+      "email": "Correo Electronico",
       "rich": "Asistente Rico",
       "simple": "Asistente Simple",
-      "stepOne": "Step 1. Nombre",
-      "stepTwo": "Step 2. País",
-      "stepThree": "Step 3. Confirmar",
+      "stepOne": "Datos Basicos",
+      "stepTwo": "Pais de Origen",
+      "stepThree": "Confirmar",
       "verticalRich": "Asistente Rico Vertical",
       "verticalSimple": "Asistente Simple Vertical"
     }

@@ -15,14 +15,15 @@
                 <div class="input-group">
                   <input
                     name="hsName"
-                    data-vv-as="Name"
+                    data-vv-as="fullName"
                     v-model="hsName"
                     v-validate="'required'"
                     required title="Nombres Completos"/>
                   <i
                     class="fa fa-exclamation-triangle error-icon icon-right input-icon"></i>
                   <i class="fa fa-check valid-icon icon-right input-icon"></i>
-                  <label class="control-label">{{'Nombres Completos'}}</label><i class="bar"></i>
+                  <label class="control-label">{{'forms.wizard.name' |
+                    translate}}</label><i class="bar"></i>
                   <small v-show="errors.has('hsName')" class="help text-danger">
                     {{ errors.first('hsName') }}
                   </small>
@@ -30,11 +31,12 @@
               </div>
               <div class="form-group with-icon-right">
               	 <div class="input-group">
-                	<input name="email" data-vv-as="Email" v-model="hsEmail" v-validate="'required'" required title="Su Correo electronico" />
+                	<input name="hsEmail" data-vv-as="email" v-model="hsEmail" v-validate="'required'" required title="Su Correo electronico" />
                 	<i
                     class="fa fa-exclamation-triangle error-icon icon-right input-icon"></i>
                   <i class="fa fa-check valid-icon icon-right input-icon"></i>
-                  <label class="control-label">{{'Email'}}</label><i class="bar"></i>
+                  <label class="control-label">{{'forms.wizard.email' |
+                    translate}}</label><i class="bar"></i>
                   <small v-show="errors.has('hsEmail')" class="help text-danger">
                     {{ errors.first('hsEmail') }}
                   </small>

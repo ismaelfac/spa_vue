@@ -1,9 +1,9 @@
 <template>
-	<div class="form-wizard-page">
-		<div class="va-row">
+  <div class="form-wizard-page">
+    <div class="va-row">
       <div class="flex md12">
         <vuestic-widget class="no-h-padding"
-                        :headerText="$t('Incripcion')">
+                        :headerText="$t('Registrarme')">
           <vuestic-wizard
             :steps="hsSteps">
             <div slot="page1" class="form-wizard-tab-content">
@@ -15,26 +15,28 @@
                 <div class="input-group">
                   <input
                     name="hsName"
-                    data-vv-as="Name"
+                    data-vv-as="fullName"
                     v-model="hsName"
                     v-validate="'required'"
                     required title="Nombres Completos"/>
                   <i
                     class="fa fa-exclamation-triangle error-icon icon-right input-icon"></i>
                   <i class="fa fa-check valid-icon icon-right input-icon"></i>
-                  <label class="control-label">{{'Nombres Completos'}}</label><i class="bar"></i>
+                  <label class="control-label">{{'forms.wizard.name' |
+                    translate}}</label><i class="bar"></i>
                   <small v-show="errors.has('hsName')" class="help text-danger">
                     {{ errors.first('hsName') }}
                   </small>
                 </div>
               </div>
               <div class="form-group with-icon-right">
-              	 <div class="input-group">
-                	<input name="email" data-vv-as="Email" v-model="hsEmail" v-validate="'required'" required title="Su Correo electronico" />
-                	<i
+                 <div class="input-group">
+                  <input name="hsEmail" data-vv-as="email" v-model="hsEmail" v-validate="'required'" required title="Su Correo electronico" />
+                  <i
                     class="fa fa-exclamation-triangle error-icon icon-right input-icon"></i>
                   <i class="fa fa-check valid-icon icon-right input-icon"></i>
-                  <label class="control-label">{{'Email'}}</label><i class="bar"></i>
+                  <label class="control-label">{{'forms.wizard.email' |
+                    translate}}</label><i class="bar"></i>
                   <small v-show="errors.has('hsEmail')" class="help text-danger">
                     {{ errors.first('hsEmail') }}
                   </small>
@@ -80,67 +82,66 @@
         </vuestic-widget>
       </div>
     </div>
-	</div>
+  </div>
 </template>
 <script>
-	import CountriesList from 'data/CountriesList'
-  import TypeUsers from 'data/TypeUsers'
-	export default {
-		name: 'InscriptionFormWizard',
-		components: {
-		},
-		computed: {
-	    hsSteps () {
-	      return [
-	        {
-	          label: this.$t('forms.wizard.stepOne'),
-	          slot: 'page1',
-	          onNext: () => {
-	            this.validateFormField('hsName')
-	          },
-	          isValid: () => {
-	            return this.isFormFieldValid('hsName')
-	          },
-	        },
-	        {
-	          label: this.$t('forms.wizard.stepTwo'),
-	          slot: 'page2',
-	          onNext: () => {
-	            this.$refs.hsCountrySelect.validate()
-	          },
-	          isValid: () => {
-	            return this.$refs.hsCountrySelect.isValid()
-	          },
-	        },
-	        {
-	          label: this.$t('forms.wizard.stepThree'),
-	          slot: 'page3',
-	        },
-	      ]
-	    }
-	  },
-		data () {
-	    return {
-	      hsName: '',
-	      hsEmail: '',
-	      hsCountry: '',
-	      countriesList: CountriesList,
-	      chosenCountry: '',
-	    }
-	  },
-		methods: {
-		    isFormFieldValid (field) {
-		      let isValid = false
-		      if (this.formFields[field]) {
-		        isValid = this.formFields[field].validated && this.formFields[field].valid
-		      }
-		      return isValid
-		    },
-		    validateFormField (fieldName) {
-		      this.$validator.validate(fieldName, this[fieldName])
-		    },
-		  },
-	}
+  import CountriesList from 'data/CountriesList'
+  export default {
+    name: 'RegisterUserHome',
+    components: {
+    },
+    computed: {
+      hsSteps () {
+        return [
+          {
+            label: this.$t('forms.wizard.stepOne'),
+            slot: 'page1',
+            onNext: () => {
+              this.validateFormField('hsName')
+            },
+            isValid: () => {
+              return this.isFormFieldValid('hsName')
+            },
+          },
+          {
+            label: this.$t('forms.wizard.stepTwo'),
+            slot: 'page2',
+            onNext: () => {
+              this.$refs.hsCountrySelect.validate()
+            },
+            isValid: () => {
+              return this.$refs.hsCountrySelect.isValid()
+            },
+          },
+          {
+            label: this.$t('forms.wizard.stepThree'),
+            slot: 'page3',
+          },
+        ]
+      }
+    },
+    data () {
+      return {
+        hsName: '',
+        hsEmail: '',
+        hsCountry: '',
+        countriesList: CountriesList,
+        chosenCountry: '',
+      }
+    },
+    methods: {
+        isFormFieldValid (field) {
+          let isValid = false
+          if (this.formFields[field]) {
+            isValid = this.formFields[field].validated && this.formFields[field].valid
+          }
+          return isValid
+        },
+        validateFormField (fieldName) {
+          this.$validator.validate(fieldName, this[fieldName])
+        },
+      },
+  }
 </script>
 <style lang="scss">
 .widget.simple-vertical-wizard-widget {
