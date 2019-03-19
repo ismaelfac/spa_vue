@@ -3,10 +3,10 @@
         <users-info-widgets></users-info-widgets>
 		<vuestic-tabs :names="[$t('InfoBasica'), $t('InfoDemografica'), $t('Perfil'), $t('Roles')]">
 			<div :slot="$t('InfoBasica')">
-				<h6>Información Basica</h6>
+				<user-basic-form></user-basic-form>
 			</div>	
 			<div :slot="$t('InfoDemografica')">
-				Segunda Pestaña
+				<user-demogra-form></user-demogra-form>
 			</div>		
 			<div :slot="$t('Perfil')">
 				Cuarta Pestaña
@@ -20,10 +20,14 @@
 </template>
 <script>
 	import UsersInfoWidgets from './shared/UsersInfoWidgets'
+	import UserBasicForm from '../../forms/users/UserBasicForm'
+	import UserDemograForm from '../../forms/users/UserDemograForm'
 	export default {
 		name: 'RegisterUserAdmin',
 		components: {
-			UsersInfoWidgets
+			UsersInfoWidgets,
+			UserBasicForm,
+			UserDemograForm
 		}
 	}
 </script>

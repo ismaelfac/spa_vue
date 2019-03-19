@@ -103,8 +103,25 @@
       "textInput": "Input de Texto",
       "textInputWithDescription": "Input de Texto (con descripcion)",
       "textArea": "Text Area",
-      "title": "Inputs",
-      "upload": "SUBIR"
+      "upload": "SUBIR",
+      "user": {
+        "title": "Usuarios",
+        "userType": "Tipo de Usuario",
+        "dniType": "Tipo de Identificación",
+        "dni": "Dni",
+        "firsName": "Nombres",
+        "lastName": "Apellidos",
+        "businessName": "Razón Social",
+        "businessUnit": "Unidad de Negocio",
+        "email": "Correo Electronico",
+        "address": "Dirección",
+        "country": "Pais",
+        "departament" : "Departamento",
+        "municipality": "Municipio",
+        "location":"Localidad",
+        "phone": "Celular",
+        "landline": "Telefono Fijo"
+        }
     },
     "mediumEditor": {
       "title": "Medium Editor"
