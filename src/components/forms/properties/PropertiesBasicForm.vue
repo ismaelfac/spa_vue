@@ -5,135 +5,92 @@
 	      	<vuestic-widget :headerText="'forms.inputs.properties.title' | translate">
 	          <form>
 	            <div class="va-row">
-            	<div class="flex md6 pr-1">
-            		<fieldset>
-	                  <vuestic-simple-select
-	                    :label="'forms.inputs.properties.propertyType' | translate"
-	                    v-model="simpleSelectModelPropertyType"
-	                    option-key="description"
-	                    v-bind:options="simpleOptionsPropertyType"
-	                  />
-	                </fieldset>    
-            	</div>
-	            <div class="flex md6">
-	                <fieldset>
-	                </fieldset>
-	            </div>
-	            <template v-if="simpleSelectModelPropertyType.id === 1 || simpleSelectModelPropertyType.id === 2">
-            		<div class="flex md6 pr-1">
+	            	<div class="flex md6 pr-1">
 	            		<fieldset>
-		                  <div class="form-group">
-		                    <div class="input-group">
-		                      <input id="simple-input" required/>
-		                      <label class="control-label" for="simple-input">{{'forms.inputs.properties.propertyTitle'
-		                        | translate}}</label><i class="bar"></i>
-		                    </div>
-		                  </div>
-		                </fieldset>    
-	            	</div>
-            		<div class="flex md6 pr-1">
-	            		<fieldset>
-		                  <div class="form-group">
-		                    <div class="input-group">
-		                      <input id="simple-input" required/>
-		                      <label class="control-label" for="simple-input">{{'forms.inputs.properties.stratum'
-		                        | translate}}</label><i class="bar"></i>
-		                    </div>
-		                  </div>
-		                </fieldset>    
-	            	</div>
-	            	<div class="flex md3 pr-1">
-	            		<fieldset>
-		                   <vuestic-checkbox
-		                      :label="$t('forms.inputs.properties.checkboxSale')"
-		                      v-model="checkboxSale.unselected"
-		                    />
-		                </fieldset>    
-	            	</div>
-	            	<div class="flex md3 pr-1">
-	            		<fieldset>
-		                   <div class="form-group" v-if="checkboxSale.selected === true">
-		                    <div class="input-group">
-		                      <input id="simple-input" required/>
-		                      <label class="control-label" for="simple-input">{{'forms.inputs.properties.saleValue'
-		                        | translate}}</label><i class="bar"></i>
-		                    </div>
-		                  </div>
-		                </fieldset>    
-	            	</div>
-	            	<div class="flex md3 pr-1">
-	            		<fieldset>
-		                   <vuestic-checkbox
-		                      :label="$t('forms.inputs.properties.checkboxRent')"
-		                      v-model="checkboxRent.unselected"
-		                    />
-		                </fieldset>    
-	            	</div>
-	            	<div class="flex md3 pr-1">
-	            		<fieldset>
-		                   <div class="form-group" v-if="checkboxRent.selected === true">
-		                    <div class="input-group">
-		                      <input id="simple-input" required/>
-		                      <label class="control-label" for="simple-input">{{'forms.inputs.properties.leaseCanon'
-		                        | translate}}</label><i class="bar"></i>
-		                    </div>
-		                  </div>
-		                </fieldset>    
-	            	</div>
-            	</template>
-	            <template v-if="simpleSelectModelPropertyType.id === 1">
-		            <div class="flex md6 pr-1">
-	            		<fieldset>
-		                  <div class="form-group">
-		                    <div class="input-group">
-		                      <input id="simple-input" required/>
-		                      <label class="control-label" for="simple-input">{{'forms.inputs.user.firsName'
-		                        | translate}}</label><i class="bar"></i>
-		                    </div>
-		                  </div>
+		                  <vuestic-simple-select
+		                    :label="'forms.inputs.properties.propertyType' | translate"
+		                    v-model="simpleSelectModelPropertyType"
+		                    option-key="description"
+		                    v-bind:options="simpleOptionsPropertyType"
+		                  />
 		                </fieldset>    
 	            	</div>
 		            <div class="flex md6">
 		                <fieldset>
-		                  <div class="form-group">
+		                	<div class="form-group">
 		                    <div class="input-group">
-		                      <input id="simple-input" required/>
-		                      <label class="control-label" for="simple-input">{{'forms.inputs.user.lastName'
+		                      <input id="simple-input" required disabled />
+		                      <label class="control-label" for="simple-input">{{'forms.inputs.properties.code'
 		                        | translate}}</label><i class="bar"></i>
 		                    </div>
 		                  </div>
 		                </fieldset>
 		            </div>
-            	</template>
-            	<template v-if="simpleSelectModelPropertyType.id === 2">
-            		<div class="flex md6 pr-1">
-	            		<fieldset>
-		                  <div class="form-group">
-		                    <div class="input-group">
-		                      <input id="simple-input" required/>
-		                      <label class="control-label" for="simple-input">{{'forms.inputs.user.businessName'
-		                        | translate}}</label><i class="bar"></i>
-		                    </div>
-		                  </div>
-		                </fieldset>    
-	            	</div>
-		            <div class="flex md6">
-		                <fieldset>
-		                  <vuestic-simple-select
-		                    :label="'forms.inputs.user.businessUnit' | translate"
-		                    v-model="simpleSelectModelBusinessUnit"
-		                    option-key="description"
-		                    v-bind:options="simpleOptionsBusinessUnit"
-		                  />
-	                	</fieldset>
-		            </div>
-            	</template>
-            	<template v-else>
-            		<h1 class="text-center">Seleccione el tipo de Usuario</h1>
-            	</template>
-	            
+		            <template v-if="simpleSelectModelPropertyType.id === 1 || simpleSelectModelPropertyType.id === 2">
+	            		<div class="flex md6 pr-1">
+		            		<fieldset>
+			                  <div class="form-group">
+			                    <div class="input-group">
+			                      <input id="simple-input" required/>
+			                      <label class="control-label" for="simple-input">{{'forms.inputs.properties.propertyTitle'
+			                        | translate}}</label><i class="bar"></i>
+			                    </div>
+			                  </div>
+			                </fieldset>    
+		            	</div>
+	            		<div class="flex md6 pr-1">
+		            		<fieldset>
+			                  <div class="form-group">
+			                    <div class="input-group">
+			                      <input id="simple-input" required/>
+			                      <label class="control-label" for="simple-input">{{'forms.inputs.properties.stratum'
+			                        | translate}}</label><i class="bar"></i>
+			                    </div>
+			                  </div>
+			                </fieldset>    
+		            	</div>
+		            	<div class="flex md3">
+		            		<fieldset>
+			                   <div class="form-group">
+			                    <div class="input-group">
+			                      <input id="simple-input"/>
+			                      <label class="control-label" for="simple-input">{{'forms.inputs.properties.saleValue'
+			                        | translate}}</label><i class="bar"></i>
+			                    </div>
+			                  </div>
+			                </fieldset>    
+		            	</div>
+		            	<div class="flex md3">
+		            		<fieldset>
+			                   <div class="form-group">
+			                    <div class="input-group">
+			                      <input id="simple-input"/>
+			                      <label class="control-label" for="simple-input">{{'forms.inputs.properties.leaseCanon'
+			                        | translate}}</label><i class="bar"></i>
+			                    </div>
+			                  </div>
+			                </fieldset>    
+		            	</div>
+		            	<div class="flex md6">
+		            		<fieldset>
+			                   
+			                </fieldset>    
+		            	</div>
+	            	</template>
+		            <template v-if="simpleSelectModelPropertyType.id === 1">
+		            	<div class="flex md12">
+			            	<apartament-form></apartament-form>
+			        	</div>
+	            	</template>
+	            	<template v-if="simpleSelectModelPropertyType.id === 2">
+	            		<div class="flex md12">
+	            			<office-form></office-form>
+	            		</div>
+	            	</template>
+	            	<template v-else>
+	            		<h1 class="text-center">Seleccione el tipo de Propiedad</h1>
+	            	</template>
 	            </div>
-
 	          </form>
 	        </vuestic-widget>
 	      </div>
@@ -142,14 +99,23 @@
 </template>
 <script>
 	import CountriesList from 'data/CountriesList'
+	import ApartamentForm from './shared/ApartamentForm'
+	import OfficeForm from './shared/OfficeForm'
 	export default {
-		name: 'UserForm',
+		name: 'PropertiesBasicForm',
+		components: {
+			ApartamentForm,
+			OfficeForm
+		},
+		computed: {
+
+		},
 		data () {
 			return {
-				kindPerson: true,
 				checkboxSale: {
 			        unselected: false,
 			        selected: true,
+			        editable: false,
 			        readonly: true,
 			        disabled: true,
 			        error: false,
@@ -158,6 +124,7 @@
 			    checkboxRent: {
 			        unselected: false,
 			        selected: true,
+			        editable: false,
 			        readonly: true,
 			        disabled: true,
 			        error: false,
@@ -227,6 +194,7 @@
 		    },
 		  },
 		  created () {
+		  	console.log('entro '+this.checkboxSale)
 		    this.$nextTick(() => {
 		      this.$validator.validateAll()
 		    })

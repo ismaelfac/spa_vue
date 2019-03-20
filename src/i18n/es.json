@@ -124,7 +124,10 @@
         },
       "properties": {
         "title": "Inmuebles",
+        "code": "Codigo",
         "propertyTitle": "Titulo de la Propiedad",
+        "apartamentTitle": "Apartamento",
+        "officeTitle": "Oficinas",
         "propertyType": "Tipo de Propiedad",
         "totalArea": "Area Total",
         "boundaries": "Linderos",

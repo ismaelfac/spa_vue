@@ -9,7 +9,7 @@
             :steps="hsSteps">
             <div slot="page1" class="form-wizard-tab-content">
               <div class="form-wizard-tab-content-text">
-                <p>A continuación te presentamos 3 pasos sencillos para suscribirte, y recibiras contenido exclusivo en inmuebles, avaluos, catastros, propiedades, post y mucho mas!"</p>
+                <p>A continuación te presentamos 3 pasos sencillos para registrar tu inmueble!"</p>
               </div>
               <div class="form-group with-icon-right"
                    :class="{'has-error': errors.has('hsName'), 'valid': isFormFieldValid('hsName')}">
