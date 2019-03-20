@@ -15,18 +15,18 @@
 		                  />
 		                </fieldset>    
 	            	</div>
-		            <div class="flex md6">
-		                <fieldset>
-		                	<div class="form-group">
-		                    <div class="input-group">
-		                      <input id="simple-input" required disabled />
-		                      <label class="control-label" for="simple-input">{{'forms.inputs.properties.code'
-		                        | translate}}</label><i class="bar"></i>
-		                    </div>
-		                  </div>
-		                </fieldset>
-		            </div>
 		            <template v-if="simpleSelectModelPropertyType.id === 1 || simpleSelectModelPropertyType.id === 2 || simpleSelectModelPropertyType.id === 3">
+	            		<div class="flex md6">
+			                <fieldset>
+			                	<div class="form-group">
+			                    <div class="input-group">
+			                      <input id="simple-input" required disabled />
+			                      <label class="control-label" for="simple-input">{{'forms.inputs.properties.code'
+			                        | translate}}</label><i class="bar"></i>
+			                    </div>
+			                  </div>
+			                </fieldset>
+			            </div>
 	            		<div class="flex md6 pr-1">
 		            		<fieldset>
 			                  <div class="form-group">

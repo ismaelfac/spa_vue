@@ -45,12 +45,7 @@
             </div>
             <div slot="page2" class="form-wizard-tab-content">
               <div class="form-wizard-tab-content-text">
-                <p>Zebras communicate with facial expressions and sounds. They
-                  make loud braying or barking sounds and
-                  soft snorting sounds. The position of their ears, how wide
-                  open their eyes are, and whether they show
-                  their teeth all send a signal. For example, ears flat back
-                  means trouble, or "you better follow orders!"</p>
+                <p>Requerimos tu pais de residencia, para responder acertadamente a su criterio de buqueda"</p>
               </div>
               <vuestic-simple-select
                 label="Select country"
@@ -63,14 +58,7 @@
             </div>
             <div slot="page3" class="form-wizard-tab-content">
               <h4>{{'forms.wizard.confirmSelection' | translate}}</h4>
-              <p>
-                Zebras communicate with facial expressions and sounds. They make
-                loud braying or barking sounds and
-                soft snorting sounds. The position of their ears, how wide open
-                their eyes are, and whether they show
-                their teeth all send a signal. For example, ears flat back means
-                trouble, or "you better follow orders!"
-              </p>
+              <p>Estas por confirmar tu registro <br> te recordamos que al registrarte con nosotros, recibiras información exclusiva en ofertas e inmuebles según tu criterio de busqueda. <br> Se garantiza la confidencialidad de su información."</p>
             </div>
             <div slot="wizardCompleted" class="form-wizard-tab-content">
               <h4>{{'Subscripción Finalizada' | translate}}</h4>

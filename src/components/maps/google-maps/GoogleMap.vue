@@ -11,8 +11,8 @@ export default {
   name: 'google-map',
   props: {
     addressLocation:{type: String},
-    latitud: { type: String, default:'' },
-    longitud: { type: String, default:'' }
+    latitud: { type: String, default:'10.9576147' },
+    longitud: { type: String, default:'-74.8044416' }
   },
   computed: mapGetters({
     config: 'config',

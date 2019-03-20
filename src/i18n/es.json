@@ -127,7 +127,7 @@
       "properties": {
         "basicTitle": "Información Basica",
         "demograTitle": "Información Demografica",
-        "code": "Codigo",
+        "code": "El codigo es generado automaticamente",
         "propertyTitle": "Titulo de la Propiedad",
         "apartamentTitle": "Apartamento",
         "officeTitle": "Oficinas",
