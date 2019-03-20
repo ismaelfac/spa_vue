@@ -2,10 +2,10 @@
 	<div>
 		<vuestic-tabs :names="[$t('InfoBasica'), $t('InfoDemografica'), $t('Perfil'), $t('Roles')]">
 			<div :slot="$t('InfoBasica')">
-				<properties-form></properties-form>
+				<properties-basic-form></properties-basic-form>
 			</div>	
 			<div :slot="$t('InfoDemografica')">
-				
+				<properties-demogra-form></properties-demogra-form>
 			</div>		
 			<div :slot="$t('Perfil')">
 				Cuarta Pestaña
@@ -18,11 +18,13 @@
 	</div>
 </template>
 <script>
-	import PropertiesForm from '../../forms/properties/PropertiesBasicForm'
+	import PropertiesBasicForm from '../../forms/properties/PropertiesBasicForm'
+	import PropertiesDemograForm from '../../forms/properties/PropertiesDemograForm'
 	export default {
 		name: 'RegisterUserAdmin',
 		components: {
-			PropertiesForm
+			PropertiesBasicForm,
+			PropertiesDemograForm
 		}
 	}
 </script>

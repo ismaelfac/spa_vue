@@ -21,7 +21,7 @@
 		                        class="fa fa-exclamation-triangle error-icon icon-right input-icon"></i>
 		                      <i
 		                        class="fa fa-check valid-icon icon-right input-icon"></i>
-		                      <label class="control-label" for="successfulEmail">{{'forms.inputs.user.country'
+		                      <label class="control-label" for="successfulEmail">{{'forms.inputs.country'
 		                        | translate}} </label><i
 		                      class="bar"></i>
 		                      <small v-show="errors.has('successfulEmail')"
@@ -47,7 +47,7 @@
 		                        class="fa fa-exclamation-triangle error-icon icon-right input-icon"></i>
 		                      <i
 		                        class="fa fa-check valid-icon icon-right input-icon"></i>
-		                      <label class="control-label" for="successfulEmail">{{'forms.inputs.user.departament'
+		                      <label class="control-label" for="successfulEmail">{{'forms.inputs.departament'
 		                        | translate}} </label><i
 		                      class="bar"></i>
 		                      <small v-show="errors.has('successfulEmail')"
@@ -73,7 +73,7 @@
 		                        class="fa fa-exclamation-triangle error-icon icon-right input-icon"></i>
 		                      <i
 		                        class="fa fa-check valid-icon icon-right input-icon"></i>
-		                      <label class="control-label" for="successfulEmail">{{'forms.inputs.user.municipality'
+		                      <label class="control-label" for="successfulEmail">{{'forms.inputs.municipality'
 		                        | translate}} </label><i
 		                      class="bar"></i>
 		                      <small v-show="errors.has('successfulEmail')"
@@ -99,7 +99,7 @@
 		                        class="fa fa-exclamation-triangle error-icon icon-right input-icon"></i>
 		                      <i
 		                        class="fa fa-check valid-icon icon-right input-icon"></i>
-		                      <label class="control-label" for="successfulEmail">{{'forms.inputs.user.location'
+		                      <label class="control-label" for="successfulEmail">{{'forms.inputs.location'
 		                        | translate}} </label><i
 		                      class="bar"></i>
 		                      <small v-show="errors.has('successfulEmail')"

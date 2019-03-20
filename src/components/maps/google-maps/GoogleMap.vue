@@ -9,7 +9,11 @@ import * as GoogleMapsLoader from 'google-maps'
 
 export default {
   name: 'google-map',
-
+  props: {
+    addressLocation:{type: String},
+    latitud: { type: String, default:'' },
+    longitud: { type: String, default:'' }
+  },
   computed: mapGetters({
     config: 'config',
   }),
@@ -23,7 +27,7 @@ export default {
     GoogleMapsLoader.load((google) => {
       /* eslint-disable no-new */
       new google.maps.Map(this.$el, {
-        center: new google.maps.LatLng(44.5403, -78.5463),
+        center: new google.maps.LatLng(this.latitud, this.longitud),
         zoom: 8,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
       })

@@ -2,7 +2,7 @@
 	<div class="form-elements">
 	    <div class="va-row">
 	      <div class="flex md12">
-	      	<vuestic-widget :headerText="'forms.inputs.properties.title' | translate">
+	      	<vuestic-widget :headerText="'forms.inputs.properties.basicTitle' | translate">
 	          <form>
 	            <div class="va-row">
 	            	<div class="flex md6 pr-1">
@@ -26,7 +26,7 @@
 		                  </div>
 		                </fieldset>
 		            </div>
-		            <template v-if="simpleSelectModelPropertyType.id === 1 || simpleSelectModelPropertyType.id === 2">
+		            <template v-if="simpleSelectModelPropertyType.id === 1 || simpleSelectModelPropertyType.id === 2 || simpleSelectModelPropertyType.id === 3">
 	            		<div class="flex md6 pr-1">
 		            		<fieldset>
 			                  <div class="form-group">
@@ -87,6 +87,11 @@
 	            			<office-form></office-form>
 	            		</div>
 	            	</template>
+	            	<template v-if="simpleSelectModelPropertyType.id === 3">
+	            		<div class="flex md12">
+	            			<home-form></home-form>
+	            		</div>
+	            	</template>
 	            	<template v-else>
 	            		<h1 class="text-center">Seleccione el tipo de Propiedad</h1>
 	            	</template>
@@ -101,11 +106,13 @@
 	import CountriesList from 'data/CountriesList'
 	import ApartamentForm from './shared/ApartamentForm'
 	import OfficeForm from './shared/OfficeForm'
+	import HomeForm from './shared/HomeForm'
 	export default {
 		name: 'PropertiesBasicForm',
 		components: {
 			ApartamentForm,
-			OfficeForm
+			OfficeForm,
+			HomeForm
 		},
 		computed: {
 
