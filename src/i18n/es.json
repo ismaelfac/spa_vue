@@ -121,6 +121,18 @@
         "location":"Localidad",
         "phone": "Celular",
         "landline": "Telefono Fijo"
+        },
+      "properties": {
+        "title": "Inmuebles",
+        "propertyTitle": "Titulo de la Propiedad",
+        "propertyType": "Tipo de Propiedad",
+        "totalArea": "Area Total",
+        "boundaries": "Linderos",
+        "stratum": "Estrato",
+        "checkboxRent": "Para Arriendo",
+        "checkboxSale": "Para Venta",
+        "leaseCanon": "Canon de Arriendo",
+        "saleValue": "Valor de Venta"
         }
     },
     "mediumEditor": {

@@ -2,30 +2,86 @@
 	<div class="form-elements">
 	    <div class="va-row">
 	      <div class="flex md12">
-	      	<vuestic-widget :headerText="'forms.inputs.user.title' | translate">
+	      	<vuestic-widget :headerText="'forms.inputs.properties.title' | translate">
 	          <form>
 	            <div class="va-row">
             	<div class="flex md6 pr-1">
             		<fieldset>
 	                  <vuestic-simple-select
-	                    :label="'forms.inputs.user.userType' | translate"
-	                    v-model="simpleSelectModelUserType"
+	                    :label="'forms.inputs.properties.propertyType' | translate"
+	                    v-model="simpleSelectModelPropertyType"
 	                    option-key="description"
-	                    v-bind:options="simpleOptionsUserType"
+	                    v-bind:options="simpleOptionsPropertyType"
 	                  />
 	                </fieldset>    
             	</div>
 	            <div class="flex md6">
 	                <fieldset>
-	                  <vuestic-simple-select
-	                    :label="'forms.inputs.user.dniType' | translate"
-	                    v-model="simpleSelectModelDniType"
-	                    option-key="description"
-	                    v-bind:options="simpleOptionsDniType"
-	                  />
 	                </fieldset>
 	            </div>
-	            <template v-if="simpleSelectModelDniType.id === 1">
+	            <template v-if="simpleSelectModelPropertyType.id === 1 || simpleSelectModelPropertyType.id === 2">
+            		<div class="flex md6 pr-1">
+	            		<fieldset>
+		                  <div class="form-group">
+		                    <div class="input-group">
+		                      <input id="simple-input" required/>
+		                      <label class="control-label" for="simple-input">{{'forms.inputs.properties.propertyTitle'
+		                        | translate}}</label><i class="bar"></i>
+		                    </div>
+		                  </div>
+		                </fieldset>    
+	            	</div>
+            		<div class="flex md6 pr-1">
+	            		<fieldset>
+		                  <div class="form-group">
+		                    <div class="input-group">
+		                      <input id="simple-input" required/>
+		                      <label class="control-label" for="simple-input">{{'forms.inputs.properties.stratum'
+		                        | translate}}</label><i class="bar"></i>
+		                    </div>
+		                  </div>
+		                </fieldset>    
+	            	</div>
+	            	<div class="flex md3 pr-1">
+	            		<fieldset>
+		                   <vuestic-checkbox
+		                      :label="$t('forms.inputs.properties.checkboxSale')"
+		                      v-model="checkboxSale.unselected"
+		                    />
+		                </fieldset>    
+	            	</div>
+	            	<div class="flex md3 pr-1">
+	            		<fieldset>
+		                   <div class="form-group" v-if="checkboxSale.selected === true">
+		                    <div class="input-group">
+		                      <input id="simple-input" required/>
+		                      <label class="control-label" for="simple-input">{{'forms.inputs.properties.saleValue'
+		                        | translate}}</label><i class="bar"></i>
+		                    </div>
+		                  </div>
+		                </fieldset>    
+	            	</div>
+	            	<div class="flex md3 pr-1">
+	            		<fieldset>
+		                   <vuestic-checkbox
+		                      :label="$t('forms.inputs.properties.checkboxRent')"
+		                      v-model="checkboxRent.unselected"
+		                    />
+		                </fieldset>    
+	            	</div>
+	            	<div class="flex md3 pr-1">
+	            		<fieldset>
+		                   <div class="form-group" v-if="checkboxRent.selected === true">
+		                    <div class="input-group">
+		                      <input id="simple-input" required/>
+		                      <label class="control-label" for="simple-input">{{'forms.inputs.properties.leaseCanon'
+		                        | translate}}</label><i class="bar"></i>
+		                    </div>
+		                  </div>
+		                </fieldset>    
+	            	</div>
+            	</template>
+	            <template v-if="simpleSelectModelPropertyType.id === 1">
 		            <div class="flex md6 pr-1">
 	            		<fieldset>
 		                  <div class="form-group">
@@ -49,7 +105,7 @@
 		                </fieldset>
 		            </div>
             	</template>
-            	<template v-if="simpleSelectModelDniType.id === 2">
+            	<template v-if="simpleSelectModelPropertyType.id === 2">
             		<div class="flex md6 pr-1">
 	            		<fieldset>
 		                  <div class="form-group">
@@ -72,67 +128,6 @@
 	                	</fieldset>
 		            </div>
             	</template>
-            	<template v-if="simpleSelectModelDniType.id === 1 || simpleSelectModelDniType.id === 2">
-            		<div class="flex md6 pr-1">
-	            		<fieldset>
-		                  <div class="form-group">
-		                    <div class="input-group">
-		                      <input id="simple-input" required/>
-		                      <label class="control-label" for="simple-input">{{'forms.inputs.user.dni'
-		                        | translate}}</label><i class="bar"></i>
-		                    </div>
-		                  </div>
-		                </fieldset>    
-	            	</div>
-            		<div class="flex md6 pr-1">
-	            		<fieldset>
-		                  <div class="form-group">
-		                    <div class="input-group">
-		                      <input id="simple-input" required/>
-		                      <label class="control-label" for="simple-input">{{'forms.inputs.user.phone'
-		                        | translate}}</label><i class="bar"></i>
-		                    </div>
-		                  </div>
-		                </fieldset>    
-	            	</div>
-	            	<div class="flex md6 pr-1">
-	            		<fieldset>
-		                  <div class="form-group">
-		                    <div class="input-group">
-		                      <input id="simple-input" required/>
-		                      <label class="control-label" for="simple-input">{{'forms.inputs.user.landline'
-		                        | translate}}</label><i class="bar"></i>
-		                    </div>
-		                  </div>
-		                </fieldset>    
-	            	</div>
-	            	<div class="flex md6 pr-1">
-	            		<fieldset>
-		                  <div class="form-group with-icon-right"
-		                       :class="{'has-error': errors.has('successfulEmail'), 'valid': isSuccessfulEmailValid}">
-		                    <div class="input-group">
-		                      <input
-		                        id="successfulEmail"
-		                        name="successfulEmail"
-		                        v-model="successfulEmail"
-		                        v-validate="'required|email'"
-		                        required/>
-		                      <i
-		                        class="fa fa-exclamation-triangle error-icon icon-right input-icon"></i>
-		                      <i
-		                        class="fa fa-check valid-icon icon-right input-icon"></i>
-		                      <label class="control-label" for="successfulEmail">{{'forms.inputs.emailValidatedSuccess'
-		                        | translate}} </label><i
-		                      class="bar"></i>
-		                      <small v-show="errors.has('successfulEmail')"
-		                             class="help text-danger">
-		                        {{ errors.first('successfulEmail') }}
-		                      </small>
-		                    </div>
-		                  </div>
-		                </fieldset>    
-	            	</div>
-            	</template>
             	<template v-else>
             		<h1 class="text-center">Seleccione el tipo de Usuario</h1>
             	</template>
@@ -152,6 +147,36 @@
 		data () {
 			return {
 				kindPerson: true,
+				checkboxSale: {
+			        unselected: false,
+			        selected: true,
+			        readonly: true,
+			        disabled: true,
+			        error: false,
+			        errorMessages: true
+			      },
+			    checkboxRent: {
+			        unselected: false,
+			        selected: true,
+			        readonly: true,
+			        disabled: true,
+			        error: false,
+			        errorMessages: true
+			      },
+				simpleOptionsPropertyType: [
+					{
+					  id: 1,
+					  description: 'Apartamento',	
+					},
+					{
+					  id: 2,
+					  description: 'Oficinas',	
+					},
+					{
+					  id: 3,
+					  description: 'Casa Comercial',	
+					}
+				],
 				simpleOptionsUserType: [
 					{
 			          id: 1,
@@ -190,6 +215,7 @@
 			          description: 'Comercial',
 			        }
 			    ],
+			    simpleSelectModelPropertyType: '',
 			    simpleSelectModelDniType: '',
 			    simpleSelectModelUserType: '',
 			    simpleSelectModelBusinessUnit: '',
