@@ -94,7 +94,7 @@
       "subscribe": "Suscribirse a la newsletter"
     },
     "inputs": {
-      "emailValidatedSuccess": "Email (validado con éxito)",
+      "emailValidatedSuccess": "Email",
       "emailValidated": "Email (validado)",
       "inputWithIcon": "Input con Icono",
       "inputWithButton": "Input con Boton",
@@ -103,8 +103,52 @@
       "textInput": "Input de Texto",
       "textInputWithDescription": "Input de Texto (con descripcion)",
       "textArea": "Text Area",
-      "title": "Inputs",
-      "upload": "SUBIR"
+      "upload": "SUBIR",
+      "yes": "Si",
+      "not": "No",
+      "address": "Dirección",
+      "country": "Pais",
+      "departament" : "Departamento",
+      "municipality": "Municipio",
+      "location":"Localidad",
+      "user": {
+        "title": "Usuarios",
+        "userType": "Tipo de Usuario",
+        "dniType": "Tipo de Identificación",
+        "dni": "Dni",
+        "firsName": "Nombres",
+        "lastName": "Apellidos",
+        "businessName": "Razón Social",
+        "businessUnit": "Unidad de Negocio",
+        "email": "Correo Electronico",
+        "phone": "Celular",
+        "landline": "Telefono Fijo"
+        },
+      "properties": {
+        "basicTitle": "Información Basica",
+        "demograTitle": "Información Demografica",
+        "code": "El codigo es generado automaticamente",
+        "propertyTitle": "Titulo de la Propiedad",
+        "apartamentTitle": "Apartamento",
+        "officeTitle": "Oficinas",
+        "homeTitle": "Casa",
+        "propertyType": "Tipo de Propiedad",
+        "totalArea": "Area Total",
+        "boundaries": "Linderos",
+        "parkingLot": "Parqueadero",
+        "administration": "Administración",
+        "stratum": "Estrato",
+        "checkboxRent": "Para Arriendo",
+        "checkboxSale": "Para Venta",
+        "leaseCanon": "Canon de Arriendo",
+        "saleValue": "Valor de Venta",
+        "elevator": "Elevador",
+        "addressOption": "No tengo la Dirección",
+        "addressLocation": "Digite la ubicación del inmueble y luego presione Buscar",
+        "btnSearchLocatiom": "Buscar",
+        "latitud": "Latitud",
+        "longitud": "Longitud"
+        }
     },
     "mediumEditor": {
       "title": "Medium Editor"
@@ -119,12 +163,13 @@
     "wizard": {
       "completed": "Asistente Completado!",
       "confirmSelection": "Confirmar selección",
-      "name": "Nombre",
+      "fullName": "Nombres Completos",
+      "email": "Correo Electronico",
       "rich": "Asistente Rico",
       "simple": "Asistente Simple",
-      "stepOne": "Step 1. Nombre",
-      "stepTwo": "Step 2. País",
-      "stepThree": "Step 3. Confirmar",
+      "stepOne": "Datos Basicos",
+      "stepTwo": "Pais de Origen",
+      "stepThree": "Confirmar",
       "verticalRich": "Asistente Rico Vertical",
       "verticalSimple": "Asistente Simple Vertical"
     }

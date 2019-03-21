@@ -325,13 +325,10 @@
     </div>
   </div>
 </template>
-
 <script>
 import CountriesList from 'data/CountriesList'
-
 export default {
   name: 'form-wizard',
-
   computed: {
     hsSteps () {
       return [

@@ -133,7 +133,7 @@ export default {
         this.valueProxy = !this.valueProxy
       }
     },
-  },
+  }
 }
 </script>
 
