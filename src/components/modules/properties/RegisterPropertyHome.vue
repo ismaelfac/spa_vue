@@ -19,15 +19,12 @@
                     data-vv-as="fullName"
                     v-model="hsName"
                     v-validate="'required'"
-                    required title="Nombres Completos"/>
+                    required/>
                   <i
                     class="fa fa-exclamation-triangle error-icon icon-right input-icon"></i>
                   <i class="fa fa-check valid-icon icon-right input-icon"></i>
-                  <label class="control-label">{{'forms.wizard.name' |
+                  <label class="control-label">{{'forms.wizard.fullName' |
                     translate}}</label><i class="bar"></i>
-                  <small v-show="errors.has('hsName')" class="help text-danger">
-                    {{ errors.first('hsName') }}
-                  </small>
                 </div>
               </div>
               <div class="form-group with-icon-right">
@@ -57,12 +54,7 @@
             </div>
             <div slot="page2" class="form-wizard-tab-content">
               <div class="form-wizard-tab-content-text">
-                <p>Zebras communicate with facial expressions and sounds. They
-                  make loud braying or barking sounds and
-                  soft snorting sounds. The position of their ears, how wide
-                  open their eyes are, and whether they show
-                  their teeth all send a signal. For example, ears flat back
-                  means trouble, or "you better follow orders!"</p>
+                <p>Ahora necesitamos los datos del Inmueble. Indique en el campo de observación el detalle de su inmueble.<br>Nota: Solo se permiten 2 fotos por propiedad y que sean menor a 15Kb por foto.</p>
               </div>
               <vuestic-simple-select
                 label="Select country"

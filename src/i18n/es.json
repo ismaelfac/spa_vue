@@ -36,11 +36,11 @@
     "buttons": "Botones"
   },
   "dashboard": {
-    "elements": "Elementos",
+    "elements": "Usuarios",
     "success": "ÉXITO",
     "successMessage": "Ha leído correctamente este mensaje de alerta importante.",
     "teamMembers": "Miembros del Equipo",
-    "versions": "Versiones"
+    "versions": "Reclamos"
   },
   "notificationsPage": {
     "alerts": {
@@ -118,6 +118,7 @@
         "dni": "Dni",
         "firsName": "Nombres",
         "lastName": "Apellidos",
+        "fullName": "Nombres Completos",
         "businessName": "Razón Social",
         "businessUnit": "Unidad de Negocio",
         "email": "Correo Electronico",

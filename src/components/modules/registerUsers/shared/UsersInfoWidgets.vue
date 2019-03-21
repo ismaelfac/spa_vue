@@ -27,14 +27,14 @@
       </vuestic-widget>
     </div>
     <div class="flex md6 xl3 xs12">
-      <vuestic-widget class="info-widget brand-danger">
+      <vuestic-widget class="info-widget brand-success">
         <div class="info-widget-inner">
           <div class="info-widget-inner has-chart">
             <div class="stats">
               <div class="stats-number">
                 425
               </div>
-              <div class="stats-title">Commits</div>
+              <div class="stats-title">Clasificados</div>
             </div>
             <div class="chart-container">
               <vuestic-progress-bar type="circle" :value="70" theme="White"

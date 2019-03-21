@@ -23,7 +23,7 @@
                   <i
                     class="fa fa-exclamation-triangle error-icon icon-right input-icon"></i>
                   <i class="fa fa-check valid-icon icon-right input-icon"></i>
-                  <label class="control-label">{{'forms.wizard.name' |
+                  <label class="control-label">{{'forms.wizard.fullName' |
                     translate}}</label><i class="bar"></i>
                   <small v-show="errors.has('hsName')" class="help text-danger">
                     {{ errors.first('hsName') }}
