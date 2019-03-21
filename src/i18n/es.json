@@ -171,6 +171,9 @@
       "stepOne": "Datos Basicos",
       "stepTwo": "Pais de Origen",
       "stepThree": "Confirmar",
+      "stepOneProperty": "Datos del Usuario",
+      "stepTwoProperty": "Datos de la Propiedad",
+      "stepThreeProperty": "Confirmar Registro de Inmueble",
       "verticalRich": "Asistente Rico Vertical",
       "verticalSimple": "Asistente Simple Vertical"
     }

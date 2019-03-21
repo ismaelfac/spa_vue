@@ -1,105 +1,128 @@
 <template>
   <div class="form-wizard-page">
     <form>
-    <div class="va-row">
-      <div class="flex md12">
-        <vuestic-widget class="no-h-padding"
-                        :headerText="$t('Registrarme')">
-          <vuestic-wizard
-            :steps="hsSteps">
-            <div slot="page1" class="form-wizard-tab-content">
-              <div class="form-wizard-tab-content-text">
-                <p>A continuación te presentamos 3 pasos sencillos para registrar tu inmueble!"</p>
+      <div class="va-row">
+        <div class="flex md12">
+          <vuestic-widget class="no-h-padding"
+                          :headerText="$t('Registrarme')">
+            <vuestic-wizard
+              :steps="hsSteps">
+              <div slot="page1" class="form-wizard-tab-content">
+                <div class="form-wizard-tab-content-text">
+                  <p>A continuación te presentamos 3 pasos sencillos para registrar tu inmueble!"</p>
+                </div>
+                <div class="form-group with-icon-right"
+                     :class="{'has-error': errors.has('hsName'), 'valid': isFormFieldValid('hsName')}">
+                  <div class="input-group">
+                    <input
+                      name="hsName"
+                      data-vv-as="fullName"
+                      v-model="hsName"
+                      v-validate="'required'"
+                      required/>
+                    <i
+                      class="fa fa-exclamation-triangle error-icon icon-right input-icon"></i>
+                    <i class="fa fa-check valid-icon icon-right input-icon"></i>
+                    <label class="control-label">{{'forms.wizard.fullName' |
+                      translate}}</label><i class="bar"></i>
+                  </div>
+                </div>
+                <div class="form-group with-icon-right">
+                   <div class="form-group with-icon-right"
+                         :class="{'has-error': errors.has('successfulEmail'), 'valid': isSuccessfulEmailValid}">
+                      <div class="input-group">
+                        <input
+                          id="successfulEmail"
+                          name="successfulEmail"
+                          v-model="successfulEmail"
+                          v-validate="'required|email'"
+                          required/>
+                        <i
+                          class="fa fa-exclamation-triangle error-icon icon-right input-icon"></i>
+                        <i
+                          class="fa fa-check valid-icon icon-right input-icon"></i>
+                        <label class="control-label" for="successfulEmail">{{'forms.inputs.emailValidatedSuccess'
+                          | translate}} </label><i
+                        class="bar"></i>
+                        <small v-show="errors.has('successfulEmail')"
+                               class="help text-danger">
+                          {{ errors.first('successfulEmail') }}
+                        </small>
+                      </div>
+                    </div>
+                </div>
               </div>
-              <div class="form-group with-icon-right"
-                   :class="{'has-error': errors.has('hsName'), 'valid': isFormFieldValid('hsName')}">
+              <div slot="page2" class="form-wizard-tab-content">
+                <div class="form-wizard-tab-content-text">
+                  <p>Ahora necesitamos los datos del Inmueble. Indique en el campo de observación el detalle de su inmueble.<br>Nota: Solo se permiten 2 fotos por propiedad y que sean menor a 15Kb por foto.</p>
+                </div>
+                <div class="form-group with-icon-right">
+                  <vuestic-simple-select
+                    label="Pais"
+                    v-model="hsCountry"
+                    name="hsCountry"
+                    :required="true"
+                    ref="hsCountrySelect"
+                    v-bind:options="countriesList">
+                  </vuestic-simple-select>
+                </div>
+                <div class="form-group with-icon-right"
+                   :class="{'has-error': errors.has('propertyTitle'), 'valid': isFormFieldValid('propertyTitle')}">
                 <div class="input-group">
                   <input
-                    name="hsName"
-                    data-vv-as="fullName"
-                    v-model="hsName"
+                    name="propertyTitle"
+                    data-vv-as="propertyTitle"
+                    v-model="propertyTitle"
                     v-validate="'required'"
                     required/>
                   <i
                     class="fa fa-exclamation-triangle error-icon icon-right input-icon"></i>
                   <i class="fa fa-check valid-icon icon-right input-icon"></i>
-                  <label class="control-label">{{'forms.wizard.fullName' |
+                  <label class="control-label">{{'forms.inputs.properties.propertyTitle' |
                     translate}}</label><i class="bar"></i>
                 </div>
+                </div>
+                <div>
+                  <galery></galery>
+                </div>
               </div>
-              <div class="form-group with-icon-right">
-                 <div class="form-group with-icon-right"
-                       :class="{'has-error': errors.has('successfulEmail'), 'valid': isSuccessfulEmailValid}">
-                    <div class="input-group">
-                      <input
-                        id="successfulEmail"
-                        name="successfulEmail"
-                        v-model="successfulEmail"
-                        v-validate="'required|email'"
-                        required/>
-                      <i
-                        class="fa fa-exclamation-triangle error-icon icon-right input-icon"></i>
-                      <i
-                        class="fa fa-check valid-icon icon-right input-icon"></i>
-                      <label class="control-label" for="successfulEmail">{{'forms.inputs.emailValidatedSuccess'
-                        | translate}} </label><i
-                      class="bar"></i>
-                      <small v-show="errors.has('successfulEmail')"
-                             class="help text-danger">
-                        {{ errors.first('successfulEmail') }}
-                      </small>
-                    </div>
-                  </div>
+              <div slot="page3" class="form-wizard-tab-content">
+                <h4>{{'forms.wizard.confirmSelection' | translate}}</h4>
+                <p>
+                  Zebras communicate with facial expressions and sounds. They make
+                  loud braying or barking sounds and
+                  soft snorting sounds. The position of their ears, how wide open
+                  their eyes are, and whether they show
+                  their teeth all send a signal. For example, ears flat back means
+                  trouble, or "you better follow orders!"
+                </p>
               </div>
-            </div>
-            <div slot="page2" class="form-wizard-tab-content">
-              <div class="form-wizard-tab-content-text">
-                <p>Ahora necesitamos los datos del Inmueble. Indique en el campo de observación el detalle de su inmueble.<br>Nota: Solo se permiten 2 fotos por propiedad y que sean menor a 15Kb por foto.</p>
+              <div slot="wizardCompleted" class="form-wizard-tab-content">
+                <h4>{{'Subscripción Finalizada' | translate}}</h4>
+                <p>
+                  Felicitaciones!, acabas de suscribirte con nosotros.<br> Por favor, revise su correo para confirmar sus datos."
+                </p>
               </div>
-              <vuestic-simple-select
-                label="Select country"
-                v-model="hsCountry"
-                name="country"
-                :required="true"
-                ref="hsCountrySelect"
-                v-bind:options="countriesList">
-              </vuestic-simple-select>
-            </div>
-            <div slot="page3" class="form-wizard-tab-content">
-              <h4>{{'forms.wizard.confirmSelection' | translate}}</h4>
-              <p>
-                Zebras communicate with facial expressions and sounds. They make
-                loud braying or barking sounds and
-                soft snorting sounds. The position of their ears, how wide open
-                their eyes are, and whether they show
-                their teeth all send a signal. For example, ears flat back means
-                trouble, or "you better follow orders!"
-              </p>
-            </div>
-            <div slot="wizardCompleted" class="form-wizard-tab-content">
-              <h4>{{'Subscripción Finalizada' | translate}}</h4>
-              <p>
-                Felicitaciones!, acabas de suscribirte con nosotros.<br> Por favor, revise su correo para confirmar sus datos."
-              </p>
-            </div>
-          </vuestic-wizard>
-        </vuestic-widget>
+            </vuestic-wizard>
+          </vuestic-widget>
+        </div>
       </div>
-    </div>
     </form>
   </div>
 </template>
 <script>
   import CountriesList from 'data/CountriesList'
+  import Galery from '../../maps/inversionesMaps/InverMapsPage'
   export default {
     name: 'RegisterUserHome',
     components: {
+      Galery
     },
     computed: {
       hsSteps () {
         return [
           {
-            label: this.$t('forms.wizard.stepOne'),
+            label: this.$t('forms.wizard.stepOneProperty'),
             slot: 'page1',
             onNext: () => {
               this.validateFormField('hsName'),
@@ -110,7 +133,7 @@
             },
           },
           {
-            label: this.$t('forms.wizard.stepTwo'),
+            label: this.$t('forms.wizard.stepTwoProperty'),
             slot: 'page2',
             onNext: () => {
               this.$refs.hsCountrySelect.validate()
@@ -120,7 +143,7 @@
             },
           },
           {
-            label: this.$t('forms.wizard.stepThree'),
+            label: this.$t('forms.wizard.stepThreeProperty'),
             slot: 'page3',
           },
         ]
@@ -136,8 +159,10 @@
     data () {
       return {
         hsName: '',
-        successfulEmail: '',
         hsCountry: '',
+        propertyTitle: '',
+        successfulEmail: '',
+        country: '',
         countriesList: CountriesList,
         chosenCountry: '',
       }
