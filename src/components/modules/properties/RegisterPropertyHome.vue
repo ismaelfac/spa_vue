@@ -82,7 +82,7 @@
                     translate}}</label><i class="bar"></i>
                 </div>
                 </div>
-                <div>
+                <div class="flex md12">
                   <galery></galery>
                 </div>
               </div>

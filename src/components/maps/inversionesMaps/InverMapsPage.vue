@@ -42,7 +42,7 @@
           class="google-maps-page__widget"
           headerText="Google Maps"
         >
-          <google-map :addressLocation="addressLocation" :latitud="latitud" :longitud="longitud" ></google-map>
+          <google-map :addressLocation="this.addressLocation" :latitud="this.latitud" :longitud="this.longitud" ></google-map>
         </vuestic-widget>
       </div>
     </div>
