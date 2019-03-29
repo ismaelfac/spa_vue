@@ -1,13 +1,5 @@
 <template>
-  <layout-web-site v-layout>
-      
-      <main  
-        slot="content"
-        id="content"
-        class="content va-layout gutter--lg fluid"
-        role="main">  
-      </main>
-  </layout-web-site>
+ <h2>Hola Mundo</h2>
 </template>
 
 <script>

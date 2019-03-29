@@ -83,6 +83,11 @@ export default new Router({
       ],
     },
     {
+      name: '/',
+      path: '/',
+      component: AppWebSite
+    },
+    {
       name: 'Admin',
       path: '/admin',
       component: AppLayout,
